@@ -26,4 +26,4 @@ WORKDIR /root
 # Define default command.
 CMD ["bash"]
 
-ENTRYPOINT ["/bin/bash"]
+ENTRYPOINT ["while sleep 2; do echo thinking; done"]
