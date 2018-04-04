@@ -6,14 +6,15 @@ RUN yum update -y && \
 yum install -y wget && \
 yum install -y java-1.8.0-openjdk java-1.8.0-openjdk-devel && \
 yum clean all && \
-export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk && \
-export PATH=$JAVA_HOME:$PATH && \
+export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk >> /etc/profile && \
+export PATH=$JAVA_HOME:$PATH >> /etc/profile && \
 cd /opt && \
 wget http://www-eu.apache.org/dist/maven/maven-3/3.5.3/binaries/apache-maven-3.5.3-bin.tar.gz && \
 tar -xzvf apache-maven-3.5.3-bin.tar.gz && \
-export M2_HOME=/opt/apache-maven-3.5.3 && \
-export M2=$M2_HOME/bin && \
-export PATH=$M2:$PATH 
+export M2_HOME=/opt/apache-maven-3.5.3 >> /etc/profile && \
+export M2=$M2_HOME/bin >> /etc/profile && \
+export PATH=$M2:$PATH >> /etc/profile &&\
+source /etc/profile
 
 ADD pom.xml /opt
 
