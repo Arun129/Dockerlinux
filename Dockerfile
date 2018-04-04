@@ -24,6 +24,5 @@ ENV HOME /root
 WORKDIR /root
 
 # Define default command.
-CMD ["bash"]
-
-ENTRYPOINT ["while sleep 2; do echo thinking; done"]
+ENTRYPOINT ["bash -c"]
+CMD ["while sleep 2; do echo thinking; done"]
