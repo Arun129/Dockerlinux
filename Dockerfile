@@ -32,6 +32,7 @@ ADD pom.xml /opt
 ENV HOME /root
 ENV JAVA_HOME /usr/lib/jvm/java-1.8.0-openjdk
 ENV M2_HOME /opt/apache-maven-3.5.3/bin
+ENV PATH $JAVA_HOME:$M2_HOME:$PATH
 
 
 # Define working directory.
