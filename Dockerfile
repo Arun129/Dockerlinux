@@ -13,7 +13,7 @@ wget http://www-eu.apache.org/dist/maven/maven-3/3.5.3/binaries/apache-maven-3.5
 tar -xzvf apache-maven-3.5.3-bin.tar.gz && \
 export M2_HOME=/opt/apache-maven-3.5.3 && \
 export M2=$M2_HOME/bin && \
-export PATH=$M2:$PATH && \
+export PATH=$M2:$PATH 
 
 COPY pom.xml /opt
 
