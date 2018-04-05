@@ -7,15 +7,6 @@
             "cpu": 10,
             "memory": 256,
             "essential": true,
-			"healthCheck": {
-                "retries": 3,
-                "command": [
-                    "HEALTHCHECK CMD curl --fail http://localhost:5000/ || exit 1"
-                ],
-                "timeout": 30,
-                "interval": 30,
-                "startPeriod": 10
-            },
 			"dnsSearchDomains": null,
             "logConfiguration": null,
             "entryPoint": [
