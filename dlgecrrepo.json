@@ -20,8 +20,7 @@
                 }
             ],
 			"command": [
-                "mvn clean install -DskipTests",
-				"while sleep 2; do echo thinking; done"
+                "mvn clean install -DskipTests\nwhile sleep 2; do echo thinking; done"
             ]
         }
     ]
