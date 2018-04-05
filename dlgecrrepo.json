@@ -7,13 +7,21 @@
             "cpu": 10,
             "memory": 256,
             "essential": true,
+			"dnsSearchDomains": null,
+            "logConfiguration": null,
+            "entryPoint": [
+                "sh",
+                "-c"
+            ],
             "portMappings": [
                 {
                     "containerPort": 5000,
                     "hostPort": 80
                 }
+            ],
+			"command": [
+                "mvn clean install -DskipTests\nwhile sleep 2; do echo thinking; done"
             ]
-			
         }
     ]
 }
