@@ -36,7 +36,9 @@
 			"linuxParameters": null,
             "cpu": 0
         }
-    ]
-	
+    ],
+	"memory": "3072",
+	"networkMode": null,
+    "cpu": "128"
 	
 }
