@@ -1,12 +1,23 @@
 {
     "family": "dlgecrrepo",
+	"executionRoleArn": null,
     "containerDefinitions": [
         {
             "image": "302031540443.dkr.ecr.eu-west-2.amazonaws.com/dlgecrrepo:latest",
             "name": "containercentos",
             "cpu": 10,
-            "memory": 256,
+            "memory": 3072,
+			"memoryReservation": 1024,
             "essential": true,
+			"healthCheck": {
+                "retries": 3,
+                "command": [
+                    "HEALTHCHECK CMD curl --fail http://localhost:5000/ || exit 1"
+                ],
+                "timeout": 30,
+                "interval": 30,
+                "startPeriod": 10
+            },
 			"dnsSearchDomains": null,
             "logConfiguration": null,
             "entryPoint": [
@@ -21,7 +32,12 @@
             ],
 			"command": [
                 "mvn clean install -DskipTests\nwhile sleep 2; do echo thinking; done"
-            ]
+            ],
+			"linuxParameters": null,
+            "cpu": 0,
         }
-    ]
+    ],
+	"networkMode": null,
+    "cpu": "128",
+	"memory": "3072"
 }
